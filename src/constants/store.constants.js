@@ -42,9 +42,10 @@ export function createRequestActionTypes(base) {
   }, {});
 }
 
-export function checkHttpStatus(response) {
-  const text = await response.text();
-  console.log("API Response :::", text);
+export async function checkHttpStatus(response) {
+  const clone = response.clone();
+    const text = await clone.text();
+    console.log("API Response Body :::", text);
   
   if (response.status >= 200 && response.status < 204) {
     return response.json();
