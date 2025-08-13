@@ -3,7 +3,7 @@ name: Build & Push Docker Image
 permissions:
   id-token: write
   contents: read
-  
+
 on:
   push:
     branches: [main]
@@ -69,7 +69,7 @@ jobs:
           echo "CONTAINERAPP_ENV=my-container-env" >> $GITHUB_ENV
           echo "APP_NAME=my-container-app" >> $GITHUB_ENV
           echo "LOCATION=eastus" >> $GITHUB_ENV
-          echo "IMAGE=${{ needs.build-and-push.outputs.image-tag }}" >> $GITHUB_ENV
+          echo "IMAGE=${{ secrets.DOCKER_USERNAME }}/my-react-app:latest" >> $GITHUB_ENV
 
       - name: Create Container App Environment if not exists
         run: |
