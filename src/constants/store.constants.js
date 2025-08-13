@@ -43,7 +43,9 @@ export function createRequestActionTypes(base) {
 }
 
 export function checkHttpStatus(response) {
-  console.log("API Response :::"+response.text());
+  const text = await response.text();
+  console.log("API Response :::", text);
+  
   if (response.status >= 200 && response.status < 204) {
     return response.json();
   } else if (response.status === 204) {
