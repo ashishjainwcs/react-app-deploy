@@ -98,5 +98,4 @@ jobs:
             --target-port 80 \
             --ingress external \
             --min-replicas 0 \
-            --max-replicas 1 \
-            --sku Consumption
+            --max-replicas 1 
