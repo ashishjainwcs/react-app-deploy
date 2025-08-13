@@ -7,4 +7,4 @@ export const ProductListingActionTypes = {
     get_categoryBreadCrumbTrail: createRequestActionTypes('GET_CATEGORY_BREADCRUMB')
 };
 
-export const PRODUCT_LIST_VIEW_URL = "/rest/products"
+export const PRODUCT_LIST_VIEW_URL = "https://commerce-2ac0.restdb.io/rest/products"
